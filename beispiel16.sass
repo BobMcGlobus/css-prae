@@ -1,0 +1,408 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif|Roboto+Condensed')
+$secondaryTextColor: #5c6971
+$accentcolor: #e2001a
+$footercolor: #262626
+$bg: #ffffff
+$display_kl: 690px
+$fontsize: 20px
+$onhover: darken($bg, 7%)
+$asideborder: darken($bg, 15%)
+$fontsizeheadline: 30px
+
+body
+  font-family: 'Roboto Condensed', sans-serif
+  font-size: 19px
+  margin: 0
+  background: $footercolor
+
+  *
+    box-sizing: border-box
+
+h1, h2, h3
+  font-family: 'Noto Serif', serif
+
+nav ul
+  margin: 0
+  padding: 0
+  list-style: none
+
+a
+  color: $secondaryTextColor
+
+  &:hover
+    color: $accentcolor
+
+.wrapper
+  max-width: 1000px
+  width: 100%
+  padding: 0 10px
+  margin: 0 auto
+  position: relative
+
+.button
+  display: inline-block
+  padding: 0 20px
+  line-height: 50px
+  background: $accentcolor
+  color: $bg
+  text-decoration: none
+
+  &:hover
+    color: $onhover
+
+#logo
+  height: 60px
+  margin-top: 20px
+
+header
+  position: fixed
+  z-index: 100
+  top: 0
+  width: 100%
+  height: 100px
+  background: rgba($bg, .88)
+
+  nav
+    position: absolute
+    right: 0
+    top: 0
+
+    ul li
+      display: inline-block
+
+      a
+        color: $secondaryTextColor
+        line-height: 100px
+        display: block
+        padding: 0 20px
+        text-decoration: none
+
+      &:hover a
+        background: $accentcolor
+        color: $bg
+
+section
+  background: $bg
+
+  .keyvisual
+    position: relative
+    background-size: cover
+    background-image: url(keyvisual.jpg)
+    height: 65vh
+    min-height: 800px
+
+    &:after
+      content: ''
+      position: absolute
+      width: 100%
+      height: 250px
+      bottom: 0
+      left: 0
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%)
+
+    .text
+      position: absolute
+      bottom: 40px
+      left: 10px
+      color: $bg
+      z-index: 100
+
+      h1
+        font-size: 50px
+        margin: 20px 0
+
+      h2
+        font-weight: 300
+        font-size: $fontsize
+        margin: 20px 0
+        text-transform: uppercase
+
+    .wrapper
+      height: 100%
+
+  aside
+    position: absolute
+    top: 200px
+    left: 10px
+    background: rgba($bg, .88)
+    border: 1px solid rgba($asideborder, .88)
+    padding: 20px
+
+    h2
+      margin-top: 0
+
+    ul
+      list-style: none
+      margin: 0
+      padding: 0
+
+      li
+        padding-bottom: 10px
+        margin-bottom: 10px
+        border-bottom: 1px solid rgba($asideborder, .88)
+
+        &:last-child
+          border-bottom: none
+
+        a
+          line-height: $fontsizeheadline
+          text-decoration: none
+
+  .teaser ul
+    list-style: none
+    margin: 0 -10px
+    padding: 40px 0
+
+    &:after
+      content: ''
+      clear: both
+      display: block
+      visibility: hidden
+
+    li
+      width: 50%
+      display: inline-block
+      float: left
+      position: relative
+      overflow: hidden
+      padding: 10px
+
+      img
+        width: 100%
+
+      h2
+        margin-top: 50px
+
+      .text
+        position: absolute
+        width: 100%
+        height: 100%
+        text-align: center
+        bottom: -100%
+        background: rgba($bg, .88)
+        transition: background 0.5s, bottom 0.5s
+
+      &:hover .text
+        bottom: 0
+        background: rgba($bg, .88)
+
+footer
+  background: $footercolor
+  color: $bg
+  padding: 20px
+
+  img
+    width: 150px
+
+  nav
+    right: 10px
+    top: 20px
+    position: absolute
+
+    ul li
+      display: inline-block
+
+      a
+        padding: 0 20px
+        color: $bg
+        text-decoration: none
+
+/*mobile
+@media only screen and (max-width: $display_kl)
+  body
+    font-family: 'Roboto Condensed', sans-serif
+    font-size: 18px
+    margin: 0
+    background: #262626
+
+    *
+      box-sizing: border-box
+
+  h1, h2, h3
+    font-family: 'Noto Serif', serif
+
+  nav ul
+    margin: 0
+    padding: 0
+    list-style: none
+
+  a
+    color: $secondaryTextColor
+
+    &:hover
+      color: $accentcolor
+
+  .wrapper
+    max-width: 1000px
+    width: 100%
+    padding: 0 10px
+    margin: 0 auto
+    position: relative
+
+  .button
+    display: inline-block
+    padding: 0 20px
+    line-height: 50px
+    background: $accentcolor
+    color: $bg
+    text-decoration: none
+
+    &:hover
+      color: $onhover
+
+  #logo
+    height: 60px
+    margin-top: 20px
+
+  header
+    position: fixed
+    z-index: 100
+    top: 0
+    width: 100%
+    height: 100px
+    background: rgba($bg, .88)
+
+    nav
+      position: absolute
+      right: 0
+      top: 0
+
+      ul li
+        display: none
+
+        a
+          color: $secondaryTextColor
+          line-height: 100px
+          display: block
+          padding: 0 20px
+          text-decoration: none
+
+        &:hover a
+          background: $accentcolor
+          color: $bg
+
+  section
+    background: $bg
+
+    .keyvisual
+      position: relative
+      background-size: cover
+      background-image: url(keyvisual.jpg)
+      height: 65vh
+      min-height: 800px
+
+      &:after
+        content: ''
+        position: absolute
+        width: 100%
+        height: 250px
+        bottom: 0
+        left: 0
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%)
+
+      .text
+        position: absolute
+        bottom: 40px
+        left: 10px
+        color: $bg
+        z-index: 100
+
+        h1
+          font-size: 50px
+          margin: 20px 0
+
+        h2
+          font-weight: 300
+          font-size: $fontsize
+          margin: 20px 0
+          text-transform: uppercase
+
+      .wrapper
+        height: 100%
+
+    aside
+      position: absolute
+      top: 200px
+      left: 10px
+      background: rgba($bg, .88)
+      border: 1px solid rgba($asideborder, .88)
+      padding: 20px
+
+      h2
+        margin-top: 0
+
+      ul
+        list-style: none
+        margin: 0
+        padding: 0
+
+        li
+          padding-bottom: 10px
+          margin-bottom: 10px
+          border-bottom: 1px solid rgba($asideborder, .88)
+
+          &:last-child
+            border-bottom: none
+
+          a
+            line-height: $fontsizeheadline
+            text-decoration: none
+
+    .teaser ul
+      list-style: none
+      margin: 0 -10px
+      padding: 40px 0
+
+      &:after
+        content: ''
+        clear: both
+        display: block
+        visibility: hidden
+
+      li
+        width: 50%
+        display: inline-block
+        float: left
+        position: relative
+        overflow: hidden
+        padding: 10px
+
+        img
+          width: 100%
+
+        h2
+          margin-top: 50px
+
+        .text
+          position: absolute
+          width: 100%
+          height: 100%
+          text-align: center
+          bottom: -100%
+          background: rgba(255, 255, 255, 0)
+          transition: background 0.5s, bottom 0.5s
+
+        &:hover .text
+          bottom: 0
+          background: rgba($bg, .88)
+
+  footer
+    background: $footercolor
+    color: $bg
+    padding: 20px
+
+    img
+      width: 150px
+
+    nav
+      right: 10px
+      top: 20px
+      position: absolute
+
+      ul li
+        display: inline-block
+
+        a
+          padding: 0 20px
+          color: $bg
+          text-decoration: none
